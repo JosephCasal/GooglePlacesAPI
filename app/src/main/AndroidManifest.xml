@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.joseph.googleplacesapi">
+    package="com.example.joseph.googleplaces">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -16,16 +15,23 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyAIaVmb_3pQxoVEQoTAuF7O2utsVU-yQBQ" />
+            android:value="AIzaSyDntT2iBXaor8WEkxQ9ntBpQA0wA048qXU" />
 
-        <activity android:name=".mainactivity.MainActivity">
+        <activity
+            android:name=".view.MainActivity.MainActivity"
+            android:launchMode="singleInstance"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:windowSoftInputMode="adjustPan|stateHidden">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.SEARCH"/>
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable"/>
         </activity>
-        <activity android:name=".Main2Activity"></activity>
     </application>
 
 </manifest>
